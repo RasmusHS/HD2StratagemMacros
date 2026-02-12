@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Supply Pack",
+    "category": "Backpacks",
+    "inputs": [ "Down", "Left", "Down", "Up", "Up", "Down" ],
+    "icon": "Supply Pack.svg"
+  },
+  {
+    "name": "Orbital Laser",
+    "category": "Orbital",
+    "inputs": [ "Right", "Down", "Up", "Right", "Down" ],
+    "icon": "Orbital Laser.svg"
+  }
+]
