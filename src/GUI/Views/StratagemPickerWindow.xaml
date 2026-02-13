@@ -1,0 +1,113 @@
+﻿<Window x:Class="GUI.Views.StratagemPickerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI.Views"
+        xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+        mc:Ignorable="d"
+        Title="Select Stratagem"
+        Background="{StaticResource BgDarkBrush}"
+        Width="520"
+        Height="700"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Search bar -->
+            <RowDefinition Height="*"/>
+            <!-- Scrollable icon grid -->
+        </Grid.RowDefinitions>
+
+        <!-- Search bar -->
+        <Grid Grid.Row="0" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="SearchBox"
+                     Grid.Column="0"
+                     Background="{StaticResource BgLightBrush}"
+                     Foreground="{StaticResource TextPrimaryBrush}"
+                     CaretBrush="{StaticResource TextPrimaryBrush}"
+                     BorderBrush="{StaticResource BorderBrush}"
+                     BorderThickness="1"
+                     Padding="8,6"
+                     FontSize="12"
+                     TextChanged="SearchBox_TextChanged"
+                     GotFocus="SearchBox_GotFocus"
+                     LostFocus="SearchBox_LostFocus"/>
+
+            <!-- Clear search button -->
+            <Button Grid.Column="1"
+                    Content="✕"
+                    Width="32"
+                    Margin="6,0,0,0"
+                    Style="{StaticResource StratagemIconButton}"
+                    Click="ClearSearch_Click"
+                    Foreground="{StaticResource TextSecBrush}"
+                    FontSize="12"/>
+        </Grid>
+
+        <!-- Scrollable stratagem grid -->
+        <ScrollViewer Grid.Row="1"
+                      VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Disabled">
+
+            <StackPanel x:Name="ContentPanel">
+
+                <!-- Offensive category -->
+                <StackPanel x:Name="OffensiveSection">
+                    <TextBlock Text="OFFENSIVE"
+                               Style="{StaticResource CategoryHeader}"/>
+                    <Rectangle Height="1"
+                               Fill="{StaticResource GoldDimBrush}"
+                               Margin="4,0,4,6"/>
+                    <WrapPanel x:Name="OffensivePanel"
+                               Orientation="Horizontal"
+                               Margin="2,0"/>
+                </StackPanel>
+
+                <!-- Supply category -->
+                <StackPanel x:Name="SupplySection">
+                    <TextBlock Text="SUPPLY"
+                               Style="{StaticResource CategoryHeader}"/>
+                    <Rectangle Height="1"
+                               Fill="{StaticResource GoldDimBrush}"
+                               Margin="4,0,4,6"/>
+                    <WrapPanel x:Name="SupplyPanel"
+                               Orientation="Horizontal"
+                               Margin="2,0"/>
+                </StackPanel>
+
+                <!-- Defensive category -->
+                <StackPanel x:Name="DefensiveSection">
+                    <TextBlock Text="DEFENSIVE"
+                               Style="{StaticResource CategoryHeader}"/>
+                    <Rectangle Height="1"
+                               Fill="{StaticResource GoldDimBrush}"
+                               Margin="4,0,4,6"/>
+                    <WrapPanel x:Name="DefensivePanel"
+                               Orientation="Horizontal"
+                               Margin="2,0"/>
+                </StackPanel>
+
+                <!-- Search results (shown when searching) -->
+                <StackPanel x:Name="SearchSection" Visibility="Collapsed">
+                    <TextBlock Text="SEARCH RESULTS"
+                               Style="{StaticResource CategoryHeader}"/>
+                    <Rectangle Height="1"
+                               Fill="{StaticResource GoldDimBrush}"
+                               Margin="4,0,4,6"/>
+                    <WrapPanel x:Name="SearchPanel"
+                               Orientation="Horizontal"
+                               Margin="2,0"/>
+                </StackPanel>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

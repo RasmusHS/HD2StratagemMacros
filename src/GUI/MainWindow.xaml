@@ -4,9 +4,219 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
+        xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="HD2 Auto Stratagems"
+        Background="{StaticResource BgDarkBrush}"
+        ResizeMode="CanMinimize"
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen">
 
-    </Grid>
+    <Window.Resources>
+        <!-- Gold separator line -->
+        <Style x:Key="GoldSeparator" TargetType="Rectangle">
+            <Setter Property="Height" Value="1"/>
+            <Setter Property="Fill"   Value="{StaticResource GoldDimBrush}"/>
+            <Setter Property="Margin" Value="12,0"/>
+        </Style>
+    </Window.Resources>
+
+    <StackPanel Margin="16">
+
+        <!-- Title bar -->
+        <Grid Margin="0,0,0,12">
+            <TextBlock Text="STRATAGEM LOADOUT"
+                       Foreground="{StaticResource GoldBrush}"
+                       FontSize="13"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+            <Button Content="Clear All"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource StratagemIconButton}"
+                    Foreground="{StaticResource TextSecBrush}"
+                    FontSize="10"
+                    Padding="8,4"
+                    Click="ClearAll_Click"/>
+        </Grid>
+
+        <Rectangle Style="{StaticResource GoldSeparator}"/>
+
+        <!-- 4 stratagem slots -->
+        <StackPanel Orientation="Horizontal"
+                    Margin="0,16,0,16"
+                    HorizontalAlignment="Center">
+
+            <!-- Slot 1 -->
+            <StackPanel Margin="6,0">
+                <Button x:Name="Slot1Button"
+                        Style="{StaticResource SlotButton}"
+                        Width="92" Height="92"
+                        Click="Slot_Click"
+                        Tag="1"
+                        ToolTip="Left click to change — Right click to clear">
+                    <Button.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Clear Slot" Tag="1" Click="ClearSlot_Click"/>
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                    <Grid Width="80" Height="80">
+                        <!-- Empty state -->
+                        <TextBlock x:Name="Slot1Empty"
+                                   Text="+"
+                                   Foreground="{StaticResource TextSecBrush}"
+                                   FontSize="28"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                        <!-- Filled state -->
+                        <svgc:SvgViewbox x:Name="Slot1Icon"
+                                         Visibility="Collapsed"
+                                         Width="80" Height="80"/>
+                    </Grid>
+                </Button>
+                <TextBlock x:Name="Slot1Label"
+                           Text="NUMPAD 1"
+                           Style="{StaticResource StratagemLabel}"
+                           Foreground="{StaticResource TextSecBrush}"
+                           HorizontalAlignment="Center"
+                           Margin="0,4,0,0"/>
+                <TextBlock x:Name="Slot1Name"
+                           Text="Empty"
+                           Style="{StaticResource StratagemLabel}"
+                           HorizontalAlignment="Center"
+                           MaxWidth="92"
+                           Margin="0,2,0,0"/>
+            </StackPanel>
+
+            <!-- Slot 2 -->
+            <StackPanel Margin="6,0">
+                <Button x:Name="Slot2Button"
+                        Style="{StaticResource SlotButton}"
+                        Width="92" Height="92"
+                        Click="Slot_Click"
+                        Tag="2"
+                        ToolTip="Left click to change — Right click to clear">
+                    <Button.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Clear Slot" Tag="2" Click="ClearSlot_Click"/>
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                    <Grid Width="80" Height="80">
+                        <TextBlock x:Name="Slot2Empty"
+                                   Text="+"
+                                   Foreground="{StaticResource TextSecBrush}"
+                                   FontSize="28"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                        <svgc:SvgViewbox x:Name="Slot2Icon"
+                                         Visibility="Collapsed"
+                                         Width="80" Height="80"/>
+                    </Grid>
+                </Button>
+                <TextBlock x:Name="Slot2Label"
+                           Text="NUMPAD 2"
+                           Style="{StaticResource StratagemLabel}"
+                           Foreground="{StaticResource TextSecBrush}"
+                           HorizontalAlignment="Center"
+                           Margin="0,4,0,0"/>
+                <TextBlock x:Name="Slot2Name"
+                           Text="Empty"
+                           Style="{StaticResource StratagemLabel}"
+                           HorizontalAlignment="Center"
+                           MaxWidth="92"
+                           Margin="0,2,0,0"/>
+            </StackPanel>
+
+            <!-- Slot 3 -->
+            <StackPanel Margin="6,0">
+                <Button x:Name="Slot3Button"
+                        Style="{StaticResource SlotButton}"
+                        Width="92" Height="92"
+                        Click="Slot_Click"
+                        Tag="3"
+                        ToolTip="Left click to change — Right click to clear">
+                    <Button.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Clear Slot" Tag="3" Click="ClearSlot_Click"/>
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                    <Grid Width="80" Height="80">
+                        <TextBlock x:Name="Slot3Empty"
+                                   Text="+"
+                                   Foreground="{StaticResource TextSecBrush}"
+                                   FontSize="28"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                        <svgc:SvgViewbox x:Name="Slot3Icon"
+                                         Visibility="Collapsed"
+                                         Width="80" Height="80"/>
+                    </Grid>
+                </Button>
+                <TextBlock x:Name="Slot3Label"
+                           Text="NUMPAD 3"
+                           Style="{StaticResource StratagemLabel}"
+                           Foreground="{StaticResource TextSecBrush}"
+                           HorizontalAlignment="Center"
+                           Margin="0,4,0,0"/>
+                <TextBlock x:Name="Slot3Name"
+                           Text="Empty"
+                           Style="{StaticResource StratagemLabel}"
+                           HorizontalAlignment="Center"
+                           MaxWidth="92"
+                           Margin="0,2,0,0"/>
+            </StackPanel>
+
+            <!-- Slot 4 -->
+            <StackPanel Margin="6,0">
+                <Button x:Name="Slot4Button"
+                        Style="{StaticResource SlotButton}"
+                        Width="92" Height="92"
+                        Click="Slot_Click"
+                        Tag="4"
+                        ToolTip="Left click to change — Right click to clear">
+                    <Button.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Clear Slot" Tag="4" Click="ClearSlot_Click"/>
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                    <Grid Width="80" Height="80">
+                        <TextBlock x:Name="Slot4Empty"
+                                   Text="+"
+                                   Foreground="{StaticResource TextSecBrush}"
+                                   FontSize="28"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                        <svgc:SvgViewbox x:Name="Slot4Icon"
+                                         Visibility="Collapsed"
+                                         Width="80" Height="80"/>
+                    </Grid>
+                </Button>
+                <TextBlock x:Name="Slot4Label"
+                           Text="NUMPAD 4"
+                           Style="{StaticResource StratagemLabel}"
+                           Foreground="{StaticResource TextSecBrush}"
+                           HorizontalAlignment="Center"
+                           Margin="0,4,0,0"/>
+                <TextBlock x:Name="Slot4Name"
+                           Text="Empty"
+                           Style="{StaticResource StratagemLabel}"
+                           HorizontalAlignment="Center"
+                           MaxWidth="92"
+                           Margin="0,2,0,0"/>
+            </StackPanel>
+
+        </StackPanel>
+
+        <Rectangle Style="{StaticResource GoldSeparator}"/>
+
+        <!-- Status bar -->
+        <TextBlock x:Name="StatusText"
+                   Text="Ready — press Numpad 1-4 in-game to activate"
+                   Foreground="{StaticResource TextSecBrush}"
+                   FontSize="10"
+                   HorizontalAlignment="Center"
+                   Margin="0,10,0,0"/>
+
+    </StackPanel>
 </Window>

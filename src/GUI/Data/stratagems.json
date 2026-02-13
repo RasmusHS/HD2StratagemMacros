@@ -1,26 +1,669 @@
 [
   {
-    "name": "Supply Pack",
-    "category": "Support",
-    "inputs": [ "Down", "Left", "Down", "Up", "Up", "Down" ],
-    "icon": "Supply Pack.svg"
+    "name": "Orbital Precision Strike",
+    "category": "Offensive",
+    "inputs": [ "Right", "Right", "Up" ],
+    "icon": "Orbital Precision Strike.svg",
+    "tags": [ "orbital", "strike", "anti-tank", "anti-tank 2", "anti-tank 3", "anti-tank 4" ],
+    "demo-force": 50
+  },
+  {
+    "name": "Orbital Gatling Barrage",
+    "category": "Offensive",
+    "inputs": [ "Right", "Down", "Left", "Up", "Up" ],
+    "icon": "Orbital Gatling Barrage.svg",
+    "tags": [ "orbital", "gatling", "barrage", "medium", "heavy", "anti-tank", "anti-tank 1" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Orbital Airburst Strike",
+    "category": "Offensive",
+    "inputs": [ "Right", "Right", "Right" ],
+    "icon": "Orbital Airburst Strike.svg",
+    "tags": [ "orbital", "airburst", "explosive", "medium" ],
+    "demo-force": 10
+  },
+  {
+    "name": "Orbital Napalm Barrage",
+    "category": "Offensive",
+    "inputs": [ "Right", "Right", "Down", "Left", "Right", "Up" ],
+    "icon": "Orbital Napalm Barrage.svg",
+    "tags": [ "orbital", "napalm", "fire", "barrage", "medium", "heavy", "anti-tank", "anti-tank 1" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Orbital 120MM HE Barrage",
+    "category": "Offensive",
+    "inputs": [ "Right", "Right", "Down", "Left", "Right", "Down" ],
+    "icon": "Orbital 120MM HE Barrage.svg",
+    "tags": [ "orbital", "barrage", "explosive", "anti-tank", "anti-tank 1", "anti-tank 2", "anti-tank 3" ],
+    "demo-force": 50
+  },
+  {
+    "name": "Orbital Walking Barrage",
+    "category": "Offensive",
+    "inputs": [ "Right", "Down", "Right", "Down", "Right", "Down" ],
+    "icon": "Orbital Walking Barrage.svg",
+    "tags": [ "orbital", "walking", "barrage", "explosive", "anti-tank", "anti-tank 2", "anti-tank 3", "anti-tank 4" ],
+    "demo-force": 50
+  },
+  {
+    "name": "Orbital 380MM HE Barrage",
+    "category": "Offensive",
+    "inputs": [ "Right", "Down", "Up", "Up", "Left", "Down", "Down" ],
+    "icon": "Orbital 380MM HE Barrage.svg",
+    "tags": [ "orbital", "barrage", "explosive", "anti-tank", "anti-tank 2", "anti-tank 3", "anti-tank 4" ],
+    "demo-force": 50
+  },
+  {
+    "name": "Orbital Railcannon Strike",
+    "category": "Offensive",
+    "inputs": [ "Right", "Up", "Down", "Down", "Right" ],
+    "icon": "Orbital Railcannon Strike.svg",
+    "tags": [ "orbital", "rail", "anti-tank", "anti-tank 2", "anti-tank 3" ],
+    "demo-force": 50
   },
   {
     "name": "Orbital Laser",
-    "category": "Orbital/Eagle",
+    "category": "Offensive",
     "inputs": [ "Right", "Down", "Up", "Right", "Down" ],
-    "icon": "Orbital Laser.svg"
+    "icon": "Orbital Laser.svg",
+    "tags": [ "orbital", "laser", "energy", "heavy", "anti-tank", "anti-tank 2" ],
+    "demo-force": 50
   },
   {
-    "name": "",
-    "category": "Defence",
-    "inputs": [ "", "", "", "", "" ],
-    "icon": ""
+    "name": "Orbital EMS Strike",
+    "category": "Offensive",
+    "inputs": [ "Right", "Right", "Left", "Down" ],
+    "icon": "Orbital EMS Strike.svg",
+    "tags": [ "orbital", "ems", "stun", "utility" ],
+    "demo-force": 50
   },
   {
-    "name": "",
-    "category": "",
-    "inputs": [ "", "", "", "", "" ],
-    "icon": ""
+    "name": "Orbital Gas Strike",
+    "category": "Offensive",
+    "inputs": [ "Right", "Right", "Down", "Right" ],
+    "icon": "Orbital Gas Strike.svg",
+    "tags": [ "orbital", "gas", "strike" ],
+    "demo-force": 50
+  },
+  {
+    "name": "Orbital Smoke Strike",
+    "category": "Offensive",
+    "inputs": [ "Right", "Right", "Down", "Up" ],
+    "icon": "Orbital Smoke Strike.svg",
+    "tags": [ "orbital", "smoke", "utility", "strike" ],
+    "demo-force": 50
+  },
+  {
+    "name": "Eagle 500KG Bomb",
+    "category": "Offensive",
+    "inputs": [ "Up", "Right", "Down", "Down", "Down" ],
+    "icon": "Eagle 500KG Bomb.svg",
+    "tags": [ "eagle", "airstrike", "air support", "explosive", "anti-tank", "anti-tank 2", "anti-tank 3" ],
+    "demo-force": 50
+  },
+  {
+    "name": "Eagle Strafing Run",
+    "category": "Offensive",
+    "inputs": [ "Up", "Right", "Right" ],
+    "icon": "Eagle Strafing Run.svg",
+    "tags": [ "eagle", "strafing", "airstrike", "air support", "medium", "heavy", "anti-tank", "anti-tank 1" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Eagle 110MM Rocket Pods",
+    "category": "Offensive",
+    "inputs": [ "Up", "Right", "Up", "Left" ],
+    "icon": "Eagle 110MM Rocket Pods.svg",
+    "tags": [ "eagle", "rocket", "airstrike", "air support", "medium", "anti-tank", "anti-tank 3" ],
+    "demo-force": 40
+  },
+  {
+    "name": "Eagle Airstrike",
+    "category": "Offensive",
+    "inputs": [ "Up", "Right", "Down", "Right" ],
+    "icon": "Eagle Airstrike.svg",
+    "tags": [ "eagle", "airstrafe", "air support", "anti-tank", "anti-tank 1", "anti-tank 3" ],
+    "demo-force": 40
+  },
+  {
+    "name": "Eagle Cluster Bomb",
+    "category": "Offensive",
+    "inputs": [ "Up", "Right", "Down", "Down", "Right" ],
+    "icon": "Eagle Cluster Bomb.svg",
+    "tags": [ "eagle", "cluster", "airburst", "airstrike", "air support", "explosive", "medium" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Eagle Napalm Airstrike",
+    "category": "Offensive",
+    "inputs": [ "Up", "Right", "Down", "Up" ],
+    "icon": "Eagle Napalm Airstrike.svg",
+    "tags": [ "eagle", "napalm", "fire", "airstrike", "air support", "medium", "heavy", "anti-tank", "anti-tank 3" ],
+    "demo-force": 40
+  },
+  {
+    "name": "Eagle Smoke Strike",
+    "category": "Offensive",
+    "inputs": [ "Up", "Right", "Up", "Down" ],
+    "icon": "Eagle Smoke Strike.svg",
+    "tags": [ "eagle", "smoke", "airstrike", "air support", "utility" ],
+    "demo-force": 40
+  },
+
+
+  {
+    "name": "Defoliation Tool",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Right", "Right", "Down" ],
+    "icon": "Defoliation Tool.svg",
+    "tags": [ "cqc", "close quarters", "support weapon", "medium", "anti-tank 1" ],
+    "demo-force": 30
+  },
+  {
+    "name": "CQC-20",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Right", "Left", "Up" ],
+    "icon": "CQC-20.svg",
+    "tags": [ "cqc", "close quarters", "explosive", "support weapon", "medium", "anti-tank 2" ],
+    "demo-force": 30
+  },
+  {
+    "name": "One True Flag",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Right", "Right", "Up" ],
+    "icon": "One True Flag.svg",
+    "tags": [ "flag", "defensive", "offensive", "support weapon", "democratic", "patriotic", "indestructible" ],
+    "demo-force": 100
+  },
+  {
+    "name": "Machine Gun",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Down", "Up", "Right" ],
+    "icon": "Machine Gun.svg",
+    "tags": [ "medium", "machine gun", "mg", "support weapon", "stationary reload" ],
+    "demo-force": 10
+  },
+  {
+    "name": "Stalwart",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Down", "Up", "Up", "Left" ],
+    "icon": "Stalwart.svg",
+    "tags": [ "light", "machine gun", "support weapon" ],
+    "demo-force": 10
+  },
+  {
+    "name": "Heavy Machine Gun",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Up", "Down", "Down" ],
+    "icon": "Heavy Machine Gun.svg",
+    "tags": [ "machine gun", "hmg", "heavy", "support weapon", "high recoil", "low ergonomics", "stationary reload" ],
+    "demo-force": 15
+  },
+  {
+    "name": "Railgun",
+    "category": "Supply",
+    "inputs": [ "Down", "Right", "Down", "Up", "Left", "Right" ],
+    "icon": "Railgun.svg",
+    "tags": [ "ballistic", "rail", "anti-tank", "anti-tank 1", "support weapon", "charge up" ],
+    "demo-force": 10
+  },
+  {
+    "name": "Speargun",
+    "category": "Supply",
+    "inputs": [ "Down", "Right", "Down", "Left", "Up", "Right" ],
+    "icon": "Speargun.svg",
+    "tags": [ "gas", "support weapon", "anti-tank", "anti-tank 1" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Anti-Materiel Rifle",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Right", "Up", "Down" ],
+    "icon": "Anti-Materiel Rifle.svg",
+    "tags": [ "ballistic", "rifle", "sniper", "support weapon", "heavy" ],
+    "demo-force": 20
+  },
+  {
+    "name": "Epoch",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Up", "Left", "Right" ],
+    "icon": "Epoch.svg",
+    "tags": [ "plasma", "charge up", "support weapon", "heavy", "anti-tank", "anti-tank 1", "low ergonomics", "stationary reload" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Grenade Launcher",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Up", "Left", "Down" ],
+    "icon": "Grenade Launcher.svg",
+    "tags": [ "gl", "explosive", "support weapon", "heavy" ],
+    "demo-force": 30
+  },
+  {
+    "name": "GL-52 De-Escalator",
+    "category": "Supply",
+    "inputs": [ "Down", "Right", "Up", "Left", "Right" ],
+    "icon": "GL-52 De-Escalator.svg",
+    "tags": [ "gl", "support weapon", "heavy" ],
+    "demo-force": 20
+  },
+  {
+    "name": "Sterilizer",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Up", "Down", "Left" ],
+    "icon": "Sterilizer.svg",
+    "tags": [ "gas", "support weapon" ],
+    "demo-force": 5
+  },
+  {
+    "name": "Flamethrower",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Up", "Down", "Up" ],
+    "icon": "Flamethrower.svg",
+    "tags": [ "fire", "flamethrower", "support weapon", "heavy" ],
+    "demo-force": 10
+  },
+  {
+    "name": "Laser Cannon",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Down", "Up", "Left" ],
+    "icon": "Laser Cannon.svg",
+    "tags": [ "laser", "energy", "fire", "support weapon", "heavy", "stationary reload" ],
+    "demo-force": 20
+  },
+  {
+    "name": "Quasar Cannon",
+    "category": "Supply",
+    "inputs": [ "Down", "Down", "Up", "Left", "Right" ],
+    "icon": "Quasar Cannon.svg",
+    "tags": [ "energy", "anti-tank", "charge up", "support weapon", "anti-tank", "anti-tank 2" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Arc Thrower",
+    "category": "Supply",
+    "inputs": [ "Down", "Right", "Down", "Up", "Left", "Left" ],
+    "icon": "Arc Thrower.svg",
+    "tags": [ "arc", "energy", "support weapon" ],
+    "demo-force": 20
+  },
+  {
+    "name": "Commando",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Up", "Down", "Right" ],
+    "icon": "Commando.svg",
+    "tags": [ "rocket", "launcher", "commando", "support weapon", "anti-tank", "anti-tank 2" ],
+    "demo-force": 30
+  },
+  {
+    "name": "EAT-411",
+    "category": "Supply",
+    "inputs": [ "Down", "Down", "Left", "Up", "Down" ],
+    "icon": "EAT-411.svg",
+    "tags": [ "rocket", "expendable", "support weapon", "anti-tank", "anti-tank 2" ],
+    "demo-force": 40
+  },
+  {
+    "name": "Expendable Napalm",
+    "category": "Supply",
+    "inputs": [ "Down", "Down", "Left", "Up", "Left" ],
+    "icon": "Expendable Napalm.svg",
+    "tags": [ "napalm", "fire", "expendable", "support weapon", "medium", "heavy" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Solo Silo",
+    "category": "Supply",
+    "inputs": [ "Down", "Up", "Right", "Down", "Down" ],
+    "icon": "Solo Silo.svg",
+    "tags": [ "explosive", "rocket", "expendable", "support weapon", "one-handed", "anti-tank", "anti-tank 3", "anti-tank 5" ],
+    "demo-force": 40
+  },
+  {
+    "name": "Expendable Anti-Tank",
+    "category": "Supply",
+    "inputs": [ "Down", "Down", "Left", "Up", "Right" ],
+    "icon": "Expendable Anti-Tank.svg",
+    "tags": [ "rocket", "expendable", "support weapon", "anti-tank", "anti-tank 2" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Autocannon",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Down", "Up", "Up", "Right" ],
+    "icon": "Autocannon.svg",
+    "tags": [ "autocannon", "backpack", "support weapon", "explosive", "low ergonomics", "stationary reload", "heavy" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Airburst Rocket Launcher",
+    "category": "Supply",
+    "inputs": [ "Down", "Up", "Up", "Left", "Right" ],
+    "icon": "Airburst Rocket Launcher.svg",
+    "tags": [ "rocket", "backpack", "airburst", "explosive", "support weapon", "low ergonomics", "stationary reload", "medium" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Spear",
+    "category": "Supply",
+    "inputs": [ "Down", "Down", "Up", "Down", "Down" ],
+    "icon": "Spear.svg",
+    "tags": [ "support weapon", "backpack", "low ergonomics", "stationary reload", "anti-tank", "anti-tank 3" ],
+    "demo-force": 40
+  },
+  {
+    "name": "StA-X3 W.A.S.P. Launcher",
+    "category": "Supply",
+    "inputs": [ "Down", "Down", "Up", "Down", "Right" ],
+    "icon": "StA-X3 W.A.S.P. Launcher.svg",
+    "tags": [ "anti-air", "backpack", "support weapon", "low ergonomics", "stationary reload", "anti-tank", "anti-tank 2" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Maxigun",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Right", "Down", "Up", "Up" ],
+    "icon": "Maxigun.svg",
+    "tags": [ "minigun", "backpack", "support weapon", "low ergonomics", "belt fed", "medium" ],
+    "demo-force": 10
+  },
+  {
+    "name": "GL-28",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Up", "Left", "Up", "Up" ],
+    "icon": "GL-28.svg",
+    "tags": [ "gl", "backpack", "support weapon", "low ergonomics", "belt fed", "heavy" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Recoilless Rifle",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Right", "Right", "Left" ],
+    "icon": "Recoilless Rifle.svg",
+    "tags": [ "rocket", "backpack", "support weapon", "low ergonomics", "stationary reload", "anti-tank", "anti-tank 1", "anti-tank 2" ],
+    "demo-force": 30
+  },
+  {
+    "name": "C4 Pack",
+    "category": "Supply",
+    "inputs": [ "Down", "Right", "Up", "Up", "Right", "Up" ],
+    "icon": "C4 Pack.svg",
+    "tags": [ "explosive", "backpack", "anti-tank", "anti-tank 3" ],
+    "demo-force": 40
+  },
+  {
+    "name": "Supply Pack",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Down", "Up", "Up", "Down" ],
+    "icon": "Supply Pack.svg",
+    "tags": [ "backpack", "support" ],
+    "demo-force": 0
+  },
+  {
+    "name": "Portable Hellbomb",
+    "category": "Supply",
+    "inputs": [ "Down", "Right", "Up", "Up", "Up" ],
+    "icon": "Hellbomb Portable.svg",
+    "tags": [ "hellbomb", "explosive", "nuke", "anti-tank", "anti-tank 6" ],
+    "demo-force": 60
+  },
+  {
+    "name": "Warp Pack",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Right", "Down", "Left", "Right" ],
+    "icon": "Warp Pack.svg",
+    "tags": [ "backpack", "mobility", "defensive" ],
+    "demo-force": 20
+  },
+  {
+    "name": "Hover Pack",
+    "category": "Supply",
+    "inputs": [ "Down", "Up", "Up", "Down", "Left", "Right" ],
+    "icon": "Hover Pack.svg",
+    "tags": [ "backpack", "mobility", "defensive" ],
+    "demo-force": 0
+  },
+  {
+    "name": "Jump Pack",
+    "category": "Supply",
+    "inputs": [ "Down", "Up", "Up", "Down", "Up" ],
+    "icon": "Jump Pack.svg",
+    "tags": [ "backpack", "mobility", "defensive" ],
+    "demo-force": 0
+  },
+  {
+    "name": "Shield Generator Pack",
+    "category": "Supply",
+    "inputs": [ "Down", "Up", "Left", "Right", "Left", "Right" ],
+    "icon": "Shield Generator Pack.svg",
+    "tags": [ "shield", "generator", "backpack", "defensive" ],
+    "demo-force": 0
+  },
+  {
+    "name": "Directional Shield",
+    "category": "Supply",
+    "inputs": [ "Down", "Up", "Left", "Right", "Up", "Up" ],
+    "icon": "Directional Shield.svg",
+    "tags": [ "shield", "directional", "defensive" ],
+    "demo-force": 0
+  },
+  {
+    "name": "Ballistic Shield Backpack",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Down", "Down", "Up", "Left" ],
+    "icon": "Ballistic Shield Backpack.svg",
+    "tags": [ "shield", "ballistic", "backpack", "defensive" ],
+    "demo-force": 0
+  },
+  {
+    "name": "Guard Dog K-9",
+    "category": "Supply",
+    "inputs": [ "Down", "Up", "Left", "Up", "Right", "Left" ],
+    "icon": "Guard Dog K-9.svg",
+    "tags": [ "guard dog", "drone", "backpack", "defensive" ],
+    "demo-force": 0
+  },
+  {
+    "name": "Guard Dog Hot Dog",
+    "category": "Supply",
+    "inputs": [ "Down", "Up", "Left", "Up", "Left", "Left" ],
+    "icon": "Guard Dog Hot Dog.svg",
+    "tags": [ "guard dog", "drone", "backpack", "defensive" ],
+    "demo-force": 10
+  },
+  {
+    "name": "Guard Dog",
+    "category": "Supply",
+    "inputs": [ "Down", "Up", "Left", "Up", "Right", "Down" ],
+    "icon": "Guard Dog.svg",
+    "tags": [ "guard dog", "drone", "backpack", "defensive" ],
+    "demo-force": 10
+  },
+  {
+    "name": "Guard Dog Rover",
+    "category": "Supply",
+    "inputs": [ "Down", "Up", "Left", "Up", "Right", "Right" ],
+    "icon": "Guard Dog Rover.svg",
+    "tags": [ "guard dog", "rover", "drone", "laser", "backpack", "defensive" ],
+    "demo-force": 10
+  },
+  {
+    "name": "Guard Dog Breath",
+    "category": "Supply",
+    "inputs": [ "Down", "Up", "Left", "Up", "Right", "Up" ],
+    "icon": "Guard Dog Breath.svg",
+    "tags": [ "guard dog", "drone", "fire", "backpack", "defensive" ],
+    "demo-force": 50
+  },
+  {
+    "name": "Bastion MK XVI",
+    "category": "Supply",
+    "inputs": [ "Left", "Down", "Right", "Down", "Left", "Down", "Up", "Down", "Up" ],
+    "icon": "Bastion MK XVI.svg",
+    "tags": [ "vehicle", "tank", "heavy", "anti-tank", "anti-tank 1", "anti-tank 2", "anti-tank 3", "anti-tank 4" ],
+    "demo-force": 40
+  },
+  {
+    "name": "Fast Recon Vehicle",
+    "category": "Supply",
+    "inputs": [ "Left", "Down", "Right", "Down", "Right", "Down", "Up" ],
+    "icon": "Fast Recon Vehicle.svg",
+    "tags": [ "vehicle", "recon", "transport", "heavy" ],
+    "demo-force": 15
+  },
+  {
+    "name": "Emancipator Exosuit",
+    "category": "Supply",
+    "inputs": [ "Left", "Down", "Right", "Up", "Left", "Down", "Up" ],
+    "icon": "Emancipator Exosuit.svg",
+    "tags": [ "exosuit", "mech", "vehicle", "supply", "anti-tank", "anti-tank 1" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Patriot Exosuit",
+    "category": "Supply",
+    "inputs": [ "Left", "Down", "Right", "Up", "Left", "Down", "Down" ],
+    "icon": "Patriot Exosuit.svg",
+    "tags": [ "exosuit", "mech", "vehicle", "supply", "medium", "anti-tank", "anti-tank 1", "anti-tank 2" ],
+    "demo-force": 30
+  },
+
+  {
+    "name": "Gatling Sentry",
+    "category": "Defensive",
+    "inputs": [ "Down", "Up", "Right", "Left" ],
+    "icon": "Gatling Sentry.svg",
+    "tags": [ "sentry", "gatling", "turret", "defensive" ],
+    "demo-force": 10
+  },
+  {
+    "name": "Machine Gun Sentry",
+    "category": "Defensive",
+    "inputs": [ "Down", "Up", "Right", "Right", "Up" ],
+    "icon": "Machine Gun Sentry.svg",
+    "tags": [ "sentry", "machine gun", "turret", "defensive" ],
+    "demo-force": 0
+  },
+  {
+    "name": "Flame Sentry",
+    "category": "Defensive",
+    "inputs": [ "Down", "Up", "Right", "Down", "Up", "Up" ],
+    "icon": "Flame Sentry.svg",
+    "tags": [ "sentry", "fire", "flamethrower", "turret", "defensive" ],
+    "demo-force": 10
+  },
+  {
+    "name": "Laser Sentry",
+    "category": "Defensive",
+    "inputs": [ "Down", "Up", "Right", "Down", "Up", "Right" ],
+    "icon": "Laser Sentry.svg",
+    "tags": [ "sentry", "laser", "energy", "turret", "defensive" ],
+    "demo-force": 20
+  },
+  {
+    "name": "Rocket Sentry",
+    "category": "Defensive",
+    "inputs": [ "Down", "Up", "Right", "Right", "Left" ],
+    "icon": "Rocket Sentry.svg",
+    "tags": [ "sentry", "rocket", "turret", "defensive" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Autocannon Sentry",
+    "category": "Defensive",
+    "inputs": [ "Down", "Up", "Right", "Up", "Left", "Up" ],
+    "icon": "Autocannon Sentry.svg",
+    "tags": [ "sentry", "autocannon", "turret", "defensive" ],
+    "demo-force": 30
+  },
+  {
+    "name": "EMS Mortar Sentry",
+    "category": "Defensive",
+    "inputs": [ "Down", "Up", "Right", "Down", "Right" ],
+    "icon": "EMS Mortar Sentry.svg",
+    "tags": [ "sentry", "mortar", "ems", "stun", "turret", "defensive" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Mortar Sentry",
+    "category": "Defensive",
+    "inputs": [ "Down", "Up", "Right", "Right", "Down" ],
+    "icon": "Mortar Sentry.svg",
+    "tags": [ "sentry", "mortar", "explosive", "turret", "defensive" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Shield Generator Relay",
+    "category": "Defensive",
+    "inputs": [ "Down", "Down", "Left", "Right", "Left", "Right" ],
+    "icon": "Shield Generator Relay.svg",
+    "tags": [ "shield", "generator", "relay", "defensive" ],
+    "demo-force": 0
+  },
+  {
+    "name": "Grenadier Battlement",
+    "category": "Defensive",
+    "inputs": [ "Down", "Right", "Down", "Left", "Right" ],
+    "icon": "Grenadier Battlement.svg",
+    "tags": [ "sentry", "grenade", "turret", "defensive" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Anti-Tank Emplacement",
+    "category": "Defensive",
+    "inputs": [ "Down", "Up", "Left", "Right", "Right", "Right" ],
+    "icon": "Anti-Tank Emplacement.svg",
+    "tags": [ "emplacement", "anti-tank", "turret", "defensive" ],
+    "demo-force": 30
+  },
+  {
+    "name": "HMG Emplacement",
+    "category": "Defensive",
+    "inputs": [ "Down", "Up", "Left", "Right", "Right", "Left" ],
+    "icon": "HMG Emplacement.svg",
+    "tags": [ "emplacement", "hmg", "machine gun", "turret", "defensive" ],
+    "demo-force": 20
+  },
+  {
+    "name": "Tesla Tower",
+    "category": "Defensive",
+    "inputs": [ "Down", "Up", "Right", "Up", "Left", "Right" ],
+    "icon": "Tesla Tower.svg",
+    "tags": [ "arc", "sentry" ],
+    "demo-force": 20
+  },
+  {
+    "name": "Anti-Tank Mines",
+    "category": "Defensive",
+    "inputs": [ "Down", "Left", "Up", "Up" ],
+    "icon": "Anti-Tank Mines.svg",
+    "tags": [ "mine", "anti-tank", "explosive" ],
+    "demo-force": 40
+  },
+  {
+    "name": "Gas Mine",
+    "category": "Defensive",
+    "inputs": [ "Down", "Left", "Left", "Right" ],
+    "icon": "Gas Mine.svg",
+    "tags": [ "mine", "gas", "offensive" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Anti-Personnel Minefield",
+    "category": "Defensive",
+    "inputs": [ "Down", "Left", "Up", "Right" ],
+    "icon": "Anti-Personnel Minefield.svg",
+    "tags": [ "mine", "anti-personnel", "explosive" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Incendiary Mines",
+    "category": "Defensive",
+    "inputs": [ "Down", "Left", "Left", "Down" ],
+    "icon": "Incendiary Mines.svg",
+    "tags": [ "mine", "fire", "incendiary", "explosive" ],
+    "demo-force": 30
   }
 ]
