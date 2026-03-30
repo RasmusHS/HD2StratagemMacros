@@ -1,0 +1,105 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
+      - '.gitattributes'
+      - 'LICENSE.txt'
+      - 'docs/**'
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch full history for version numbering
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      
+      - name: Generate version number
+        id: version
+        shell: pwsh
+        run: |
+          $commitCount = git rev-list --count HEAD
+          $shortSha = git rev-parse --short HEAD
+          $version = "1.0.$commitCount"
+          echo "VERSION=$version" >> $env:GITHUB_OUTPUT
+          echo "VERSION_TAG=v$version" >> $env:GITHUB_OUTPUT
+          echo "SHORT_SHA=$shortSha" >> $env:GITHUB_OUTPUT
+          echo "Generated version: $version"
+      
+      - name: Restore dependencies
+        run: dotnet restore src/GUI/HD2StratagemHelper.csproj
+      
+      - name: Build and publish
+        run: |
+          dotnet publish src/GUI/HD2StratagemHelper.csproj `
+            -c Release `
+            -r win-x64 `
+            --self-contained true `
+            -p:PublishReadyToRun=true `
+            -p:Version=${{ steps.version.outputs.VERSION }} `
+            -o publish
+      
+      - name: Create release package
+        id: package
+        shell: pwsh
+        run: |
+          $publishDir = "publish"
+          $outputZip = "HD2StratagemHelper-${{ steps.version.outputs.VERSION }}-win-x64.zip"
+          
+          # Package the entire publish directory
+          # This includes the .exe and all dependencies
+          Compress-Archive -Path "$publishDir/*" -DestinationPath $outputZip -Force
+          
+          # Verify the zip was created
+          if (Test-Path $outputZip) {
+            $zipSize = (Get-Item $outputZip).Length / 1MB
+            Write-Host "Created $outputZip ($([math]::Round($zipSize, 2)) MB)"
+          } else {
+            Write-Error "Failed to create release package"
+            exit 1
+          }
+          
+          echo "RELEASE_ZIP=$outputZip" >> $env:GITHUB_OUTPUT
+      
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.version.outputs.VERSION_TAG }}
+          name: HD2 Stratagem Helper ${{ steps.version.outputs.VERSION }}
+          body: |
+            ## HD2 Stratagem Helper v${{ steps.version.outputs.VERSION }}
+            
+            **Build:** `${{ steps.version.outputs.SHORT_SHA }}`
+            
+            ### What's New
+            See commits since last release for changes.
+            
+            ### Installation
+            1. Download `HD2StratagemHelper-${{ steps.version.outputs.VERSION }}-win-x64.zip`
+            2. Extract the ZIP file to a folder
+            3. Run `HD2StratagemHelper.exe` from the extracted folder
+            
+            ### Requirements
+            - Windows 10/11 x64
+            - No .NET runtime required (self-contained)
+            
+            ---
+            *Auto-generated release from commit ${{ github.sha }}*
+          files: |
+            HD2StratagemHelper-${{ steps.version.outputs.VERSION }}-win-x64.zip
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

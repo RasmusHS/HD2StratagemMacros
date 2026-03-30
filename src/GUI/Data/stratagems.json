@@ -354,6 +354,14 @@
     "demo-force": 40
   },
   {
+    "name": "Cremator",
+    "category": "Supply",
+    "inputs": [ "Down", "Down", "Left", "Down", "Up", "Up" ],
+    "icon": "Cremator.svg",
+    "tags": [ "fire", "flamethrower", "support weapon", "heavy", "backpack", "belt-fed", "napalm" ],
+    "demo-force": 0
+  },
+  {
     "name": "StA-X3 W.A.S.P. Launcher",
     "category": "Supply",
     "inputs": [ "Down", "Down", "Up", "Down", "Right" ],
@@ -584,6 +592,14 @@
     "inputs": [ "Down", "Up", "Right", "Down", "Right" ],
     "icon": "EMS Mortar Sentry.svg",
     "tags": [ "sentry", "mortar", "ems", "stun", "turret", "defensive" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Gas Mortar Sentry",
+    "category": "Defensive",
+    "inputs": [ "Down", "Up", "Right", "Down", "Left" ],
+    "icon": "Gas Mortar Sentry.svg",
+    "tags": [ "sentry", "mortar", "explosive", "turret", "defensive", "gas" ],
     "demo-force": 30
   },
   {
