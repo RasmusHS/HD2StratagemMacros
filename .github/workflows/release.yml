@@ -24,7 +24,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '10.0.x'
       
       - name: Generate version number
         id: version
@@ -56,7 +56,7 @@ jobs:
         shell: pwsh
         run: |
           $publishDir = "publish"
-          $outputZip = "HD2StratagemHelper-${{ steps.version.outputs.VERSION }}-win-x64.zip"
+          $outputZip = "HD2StratagemMacros-${{ steps.version.outputs.VERSION }}-win-x64.zip"
           
           # Package the entire publish directory
           # This includes the .exe and all dependencies
@@ -77,9 +77,9 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ steps.version.outputs.VERSION_TAG }}
-          name: HD2 Stratagem Helper ${{ steps.version.outputs.VERSION }}
+          name: HD2 Stratagem Macros ${{ steps.version.outputs.VERSION }}
           body: |
-            ## HD2 Stratagem Helper v${{ steps.version.outputs.VERSION }}
+            ## HD2 Stratagem Macros v${{ steps.version.outputs.VERSION }}
             
             **Build:** `${{ steps.version.outputs.SHORT_SHA }}`
             
@@ -87,9 +87,9 @@ jobs:
             See commits since last release for changes.
             
             ### Installation
-            1. Download `HD2StratagemHelper-${{ steps.version.outputs.VERSION }}-win-x64.zip`
+            1. Download `HD2StratagemMacros-${{ steps.version.outputs.VERSION }}-win-x64.zip`
             2. Extract the ZIP file to a folder
-            3. Run `HD2StratagemHelper.exe` from the extracted folder
+            3. Run `HD2StratagemMacros.exe` from the extracted folder
             
             ### Requirements
             - Windows 10/11 x64
@@ -98,7 +98,7 @@ jobs:
             ---
             *Auto-generated release from commit ${{ github.sha }}*
           files: |
-            HD2StratagemHelper-${{ steps.version.outputs.VERSION }}-win-x64.zip
+            HD2StratagemMacros-${{ steps.version.outputs.VERSION }}-win-x64.zip
           draft: false
           prerelease: false
         env:
