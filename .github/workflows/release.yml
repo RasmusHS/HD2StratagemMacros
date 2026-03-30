@@ -39,11 +39,11 @@ jobs:
           echo "Generated version: $version"
       
       - name: Restore dependencies
-        run: dotnet restore src/GUI/HD2StratagemHelper.csproj
+        run: dotnet restore src/GUI/GUI.csproj
       
       - name: Build and publish
         run: |
-          dotnet publish src/GUI/HD2StratagemHelper.csproj `
+          dotnet publish src/GUI/GUI.csproj `
             -c Release `
             -r win-x64 `
             --self-contained true `
