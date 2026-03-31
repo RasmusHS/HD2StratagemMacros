@@ -1,6 +1,6 @@
 # HD2 Stratagem Macros
  
-A lightweight Windows desktop tool for executing Helldivers 2 stratagem input sequences via configurable Numpad hotkeys.
+A lightweight Windows desktop tool for executing Helldivers 2 stratagem input sequences via configurable Numpad hotkeys. \
 The application doesn't attach itself to the Helldivers 2 process, so GameGuard will not be triggered.
  
 ## Features
