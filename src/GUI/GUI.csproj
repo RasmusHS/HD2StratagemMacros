@@ -6,8 +6,8 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
-	  <!--<AssemblyName>HD2AutoStratagems</AssemblyName>-->
-	  <!--<RootNamespace>HD2AutoStratagems</RootNamespace>-->
+	  <AssemblyName>HD2StratagemMacros</AssemblyName>
+	  <!--<RootNamespace>HD2StratagemMacros</RootNamespace>-->
 	  <!--<ApplicationIcon>Assets\icon.ico</ApplicationIcon>-->
   </PropertyGroup>
 
