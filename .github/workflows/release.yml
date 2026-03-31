@@ -2,14 +2,8 @@ name: Build and Release
 
 on:
   push:
-    branches:
-      - master
-    paths-ignore:
-      - '**.md'
-      - '.gitignore'
-      - '.gitattributes'
-      - 'LICENSE.txt'
-      - 'docs/**'
+    tags:
+      - 'v*'
 
 jobs:
   build-and-release:
@@ -20,8 +14,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Fetch full history for version numbering
       
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
@@ -32,13 +24,13 @@ jobs:
         id: version
         shell: pwsh
         run: |
-          $commitCount = git rev-list --count HEAD
+          $tag = "${{ github.ref_name }}"
+          $version = $tag.TrimStart('v')
           $shortSha = git rev-parse --short HEAD
-          $version = "1.0.$commitCount"
           echo "VERSION=$version" >> $env:GITHUB_OUTPUT
-          echo "VERSION_TAG=v$version" >> $env:GITHUB_OUTPUT
+          echo "VERSION_TAG=$tag" >> $env:GITHUB_OUTPUT
           echo "SHORT_SHA=$shortSha" >> $env:GITHUB_OUTPUT
-          echo "Generated version: $version"
+          echo "Version from tag: $version"
       
       - name: Restore dependencies
         run: dotnet restore src/GUI/GUI.csproj
@@ -63,11 +55,8 @@ jobs:
           $publishDir = "publish"
           $outputZip = "HD2StratagemMacros-${{ steps.version.outputs.VERSION }}-win-x64.zip"
           
-          # Package the entire publish directory
-          # This includes the .exe and all dependencies
           Compress-Archive -Path "$publishDir/*" -DestinationPath $outputZip -Force
           
-          # Verify the zip was created
           if (Test-Path $outputZip) {
             $zipSize = (Get-Item $outputZip).Length / 1MB
             Write-Host "Created $outputZip ($([math]::Round($zipSize, 2)) MB)"
