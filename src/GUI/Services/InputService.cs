@@ -34,4 +34,11 @@ public class InputService
             }
         }
     }
+
+    public async Task ExecuteMaxCharge(int holdMs)
+    {
+        _sim.Mouse.LeftButtonDown();
+        await Task.Delay(holdMs);
+        _sim.Mouse.LeftButtonUp();
+    }
 }
