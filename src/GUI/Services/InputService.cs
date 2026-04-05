@@ -15,7 +15,7 @@ public class InputService
         { "Right", VirtualKeyCode.RIGHT }
     };
 
-    public async Task ExecuteStratagem(List<string> inputs, int delayMs = 15)
+    public async Task ExecuteStratagem(List<string> inputs, int delayMs = 25)
     {
         // Hold LCtrl to open stratagem menu
         _sim.Keyboard.KeyDown(VirtualKeyCode.LCONTROL);
