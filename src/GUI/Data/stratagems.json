@@ -356,7 +356,7 @@
   {
     "name": "Cremator",
     "category": "Supply",
-    "inputs": [ "Down", "Down", "Left", "Down", "Up", "Up" ],
+    "inputs": [ "Down", "Down", "Right", "Down", "Up", "Up" ],
     "icon": "Cremator.svg",
     "tags": [ "fire", "flamethrower", "support weapon", "heavy", "backpack", "belt-fed", "napalm" ],
     "demo-force": 0
