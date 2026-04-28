@@ -322,6 +322,14 @@
     "demo-force": 40
   },
   {
+    "name": "Bullet Storm",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Down", "Right", "Up", "Left" ],
+    "icon": "Bullet Storm.svg",
+    "tags": [ "machine gun", "mg", "support weapon", "light", "expendable" ],
+    "demo-force": 10
+  },
+  {
     "name": "Expendable Anti-Tank",
     "category": "Supply",
     "inputs": [ "Down", "Down", "Left", "Up", "Right" ],
@@ -536,6 +544,22 @@
     "icon": "Patriot Exosuit.svg",
     "tags": [ "exosuit", "mech", "vehicle", "supply", "medium", "anti-tank", "anti-tank 1", "anti-tank 2" ],
     "demo-force": 30
+  },
+  {
+    "name": "Breakthrough Exosuit",
+    "category": "Supply",
+    "inputs": [ "Left", "Down", "Right", "Left", "Right", "Down", "Up"],
+    "icon": "Breakthrough Exosuit.svg",
+    "tags": [ "exosuit", "mech", "vehicle", "supply", "heavy" ],
+    "demo-force": 30
+  },
+  {
+    "name": "Lumberer Exosuit",
+    "category": "Supply",
+    "inputs": [ "Left", "Down", "Right", "Up", "Right", "Left", "Up" ],
+    "icon": "Lumberer Exosuit.svg",
+    "tags": [ "exosuit", "mech", "vehicle", "supply", "heavy", "anti-tank", "anti-tank 1", "incendiary" ],
+    "demo-force": 40
   },
 
   {
