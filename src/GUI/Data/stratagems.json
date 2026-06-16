@@ -533,17 +533,17 @@
     "name": "Supply FRV",
     "category": "Supply",
     "inputs": [ "Left", "Down", "Left", "Left", "Down", "Up", "Right" ],
-    "icon": "Fast Recon Vehicle.svg",
+    "icon": "Supply FRV.svg",
     "tags": [ "vehicle", "recon", "transport", "medium", "supply" ],
-    "demo-force": 15
+    "demo-force": 10
   },
   {
     "name": "Incinerator FRV",
     "category": "Supply",
     "inputs": [ "Left", "Down", "Right", "Left", "Down", "Up", "Up" ],
-    "icon": "Fast Recon Vehicle.svg",
+    "icon": "Incinerator FRV.svg",
     "tags": [ "vehicle", "recon", "transport", "heavy", "incendiary" ],
-    "demo-force": 15
+    "demo-force": 10
   },
   {
     "name": "Emancipator Exosuit",
