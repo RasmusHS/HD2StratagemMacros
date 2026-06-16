@@ -530,6 +530,22 @@
     "demo-force": 15
   },
   {
+    "name": "Supply FRV",
+    "category": "Supply",
+    "inputs": [ "Left", "Down", "Left", "Left", "Down", "Up", "Right" ],
+    "icon": "Fast Recon Vehicle.svg",
+    "tags": [ "vehicle", "recon", "transport", "medium", "supply" ],
+    "demo-force": 15
+  },
+  {
+    "name": "Incinerator FRV",
+    "category": "Supply",
+    "inputs": [ "Left", "Down", "Right", "Left", "Down", "Up", "Up" ],
+    "icon": "Fast Recon Vehicle.svg",
+    "tags": [ "vehicle", "recon", "transport", "heavy", "incendiary" ],
+    "demo-force": 15
+  },
+  {
     "name": "Emancipator Exosuit",
     "category": "Supply",
     "inputs": [ "Left", "Down", "Right", "Up", "Left", "Down", "Up" ],
@@ -548,7 +564,7 @@
   {
     "name": "Breakthrough Exosuit",
     "category": "Supply",
-    "inputs": [ "Left", "Down", "Right", "Left", "Right", "Down", "Up"],
+    "inputs": [ "Left", "Down", "Right", "Left", "Right", "Down", "Up" ],
     "icon": "Breakthrough Exosuit.svg",
     "tags": [ "exosuit", "mech", "vehicle", "supply", "heavy" ],
     "demo-force": 30
