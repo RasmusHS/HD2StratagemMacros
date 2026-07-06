@@ -15,16 +15,10 @@ public partial class MainWindow : Window
     private readonly StratagemService _stratagemService;
     private readonly InputService _inputService;
 
-    static readonly Dictionary<string, int> WeaponCharge = new()
-    {
-        { "Railgun", 2515 }, // ms to max charge railgun
-        { "Epoch", 2515 } // ms to max charge epoch
-    };
-
-    private int? _activeChargeMs = null;    
+    private const int TotalSlots = 7;
 
     // Current stratagem assigned to each slot (null = empty)
-    private readonly Stratagem?[] _slots = new Stratagem?[4];
+    private readonly Stratagem?[] _slots = new Stratagem?[TotalSlots];
 
     // Low-level keyboard hook
     private const int WH_KEYBOARD_LL = 13;
@@ -79,7 +73,7 @@ public partial class MainWindow : Window
 
     private void ClearAll_Click(object sender, RoutedEventArgs e)
     {
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < TotalSlots; i++)
             ClearSlot(i);
         StatusText.Text = "All slots cleared";
     }
@@ -97,24 +91,12 @@ public partial class MainWindow : Window
     {
         _slots[slotIndex] = null;
 
-        var (iconView, emptyText, nameText) = slotIndex switch
-        {
-            0 => (Slot1Icon, Slot1Empty, Slot1Name),
-            1 => (Slot2Icon, Slot2Empty, Slot2Name),
-            2 => (Slot3Icon, Slot3Empty, Slot3Name),
-            3 => (Slot4Icon, Slot4Empty, Slot4Name),
-            _ => throw new ArgumentOutOfRangeException()
-        };
+        var (iconView, emptyText, nameText) = GetSlotControls(slotIndex);
 
         iconView.Visibility = Visibility.Collapsed;
         emptyText.Visibility = Visibility.Visible;
         nameText.Text = "Empty";
         StatusText.Text = $"Slot {slotIndex + 1} cleared";
-
-        // After clearing a slot, check if any of the remaining assigned stratagems are charge weapons and update the charge binding accordingly.
-        // This ensures that if a charge weapon was cleared from a slot, Numpad5 will no longer trigger the charge macro unless another slot still contains a charge weapon.
-        UpdateChargeBinding();
-
     }
 
     // ─── Slot assignment ───────────────────────────────────────────────────
@@ -134,14 +116,7 @@ public partial class MainWindow : Window
 
         // Resolve controls for this slot
         // This pattern matching switch expression selects the appropriate UI elements (icon view, empty text, and name text) based on the slot index.
-        var (iconView, emptyText, nameText) = slotIndex switch
-        {
-            0 => (Slot1Icon, Slot1Empty, Slot1Name),
-            1 => (Slot2Icon, Slot2Empty, Slot2Name),
-            2 => (Slot3Icon, Slot3Empty, Slot3Name),
-            3 => (Slot4Icon, Slot4Empty, Slot4Name),
-            _ => throw new ArgumentOutOfRangeException()
-        };
+        var (iconView, emptyText, nameText) = GetSlotControls(slotIndex);
 
         // Load SVG directly via file path
         iconView.Source = new Uri(stratagem.IconPath, UriKind.Absolute);
@@ -151,10 +126,23 @@ public partial class MainWindow : Window
         // Update the name text with the stratagem's name
         nameText.Text = stratagem.Name;
         StatusText.Text = $"Slot {slotIndex + 1} set to {stratagem.Name}";
+    }
 
-        // After assigning a stratagem to a slot, check if any of the assigned stratagems are charge weapons and update the charge binding accordingly
-        if (WeaponCharge.ContainsKey(stratagem.Name))
-            UpdateChargeBinding();
+    // ─── Slot control resolver ─────────────────────────────────────────────
+
+    private (SharpVectors.Converters.SvgViewbox iconView, TextBlock emptyText, TextBlock nameText) GetSlotControls(int slotIndex)
+    {
+        return slotIndex switch
+        {
+            0 => (Slot1Icon, Slot1Empty, Slot1Name),
+            1 => (Slot2Icon, Slot2Empty, Slot2Name),
+            2 => (Slot3Icon, Slot3Empty, Slot3Name),
+            3 => (Slot4Icon, Slot4Empty, Slot4Name),
+            4 => (Slot5Icon, Slot5Empty, Slot5Name),
+            5 => (Slot6Icon, Slot6Empty, Slot6Name),
+            6 => (Slot7Icon, Slot7Empty, Slot7Name),
+            _ => throw new ArgumentOutOfRangeException(nameof(slotIndex))
+        };
     }
 
     // ─── Global numpad hotkey hook ─────────────────────────────────────────
@@ -176,11 +164,10 @@ public partial class MainWindow : Window
     }
 
     /// <summary>
-    /// Processes keyboard hook events to detect numpad key presses and triggers associated macros for stratagems or
-    /// charge weapons as appropriate.
+    /// Processes keyboard hook events to detect numpad key presses and triggers associated macros for stratagems.
     /// </summary>
     /// <remarks>This method enables users to activate stratagem macros using numpad keys 1-4, and to trigger
-    /// a charge macro with numpad 5 when a charge weapon is active. If no charge weapon is active, numpad 5 is ignored.
+    /// arsenal augmentation stratagems with numpad 5-7.
     /// The method is intended to be used as a low-level keyboard hook callback.</remarks>
     /// <param name="nCode">The hook code that indicates the type of keyboard event. A value greater than or equal to zero means the event
     /// should be processed.</param>
@@ -195,70 +182,30 @@ public partial class MainWindow : Window
         {
             // Read the virtual key code from the lParam
             int vkCode = Marshal.ReadInt32(lParam);
-            int slotIndex = (_activeChargeMs.HasValue) ? vkCode switch // If a charge weapon is active, Numpad5 should trigger the charge macro, so we map it to a special index (e.g., 4) that indicates the charge macro should be executed instead of a regular slot.
+            int slotIndex = vkCode switch
             {
                 0x61 => 0, // Numpad1
                 0x62 => 1, // Numpad2
                 0x63 => 2, // Numpad3
                 0x64 => 3, // Numpad4
-                0x65 => 4, // Numpad5 (for charge weapons like the railgun/epoch)
-                _ => -1
-            } : vkCode switch // If no charge weapon is active, Numpad5 should not trigger any action, so we can ignore it by mapping it to -1 along with any other non-numpad keys.
-            {
-                0x61 => 0, // Numpad1
-                0x62 => 1, // Numpad2
-                0x63 => 2, // Numpad3
-                0x64 => 3, // Numpad4
+                0x65 => 4, // Numpad5
+                0x66 => 5, // Numpad6
+                0x67 => 6, // Numpad7
                 _ => -1
             };
-
-            // If a charge weapon is active and Numpad5 is pressed, execute the charge macro with the appropriate charge time
-            // We check if _activeChargeMs has a value to determine if a charge weapon is currently active, and if so, we execute the charge macro when Numpad5 is pressed (indicated by slotIndex == 4).
-            if (slotIndex == 4 && _activeChargeMs != null)
-            {
-                // Fire and forget - don't block the hook thread
-                Task.Run(() => _inputService.ExecuteMaxCharge(_activeChargeMs.Value));
-            }
 
             // If a regular numpad key (1-4) is pressed and the corresponding slot has an assigned stratagem, execute the macro for that stratagem
             // This allows the user to trigger the assigned stratagems using the numpad keys, while Numpad5 is reserved for charge macros if any charge weapons are present in the slots.
             // Note that if Numpad5 is pressed but no charge weapon is active, it will not trigger any action since slotIndex will be -1 in that case.
-            if (slotIndex >= 0 && slotIndex <= 3 && _slots[slotIndex] != null)
+            if (slotIndex >= 0 && slotIndex < TotalSlots && _slots[slotIndex] != null)
             {
                 var inputs = _slots[slotIndex]!.Inputs; // Get the input sequence for the assigned stratagem in the pressed slot
                 // Fire and forget - don't block the hook thread
                 Task.Run(() => _inputService.ExecuteStratagem(inputs));
             }
-
         }
 
         return NativeMethods.CallNextHookEx(_hookHandle, nCode, wParam, lParam);
-    }
-
-    private void UpdateChargeBinding() // This method can be called whenever slot assignments change to ensure the charge macro is correctly bound to Numpad5 if a charge weapon is present
-    {
-        // Check if any slot contains a charge weapon
-        bool hasChargeWeapon = _slots.Any(s => s != null && WeaponCharge.ContainsKey(s!.Name));
-
-        // If a charge weapon is present, then update _activeChargeMs to the charge time of the weapon in the lowest indexed slot that contains a charge weapon.
-        // If no charge weapon is present, set _activeChargeMs to null to indicate that Numpad5 should not trigger any charge macro.
-        if (hasChargeWeapon)
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                // Check if the slot is not empty and contains a charge weapon
-                if (_slots[i] != null && WeaponCharge.ContainsKey(_slots[i]!.Name))
-                {
-                    // Update _activeChargeMs to the charge time of the weapon in this slot
-                    _activeChargeMs = WeaponCharge[_slots[i]!.Name];
-                }
-            }
-        }
-        else
-        {
-            // If no charge weapon is present, Numpad5 should not trigger any charge macro, so we can set _activeChargeMs to null
-            _activeChargeMs = null;
-        }
     }
 }
 

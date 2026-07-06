@@ -9,6 +9,7 @@ public class StratagemService
 {
     private List<Stratagem> _all = [];
 
+    //public IEnumerable<Stratagem> Mission => _all.Where(s => s.Category == "Mission");
     public IEnumerable<Stratagem> Offensive => _all.Where(s => s.Category == "Offensive");
     public IEnumerable<Stratagem> Supply => _all.Where(s => s.Category == "Supply");
     public IEnumerable<Stratagem> Defensive => _all.Where(s => s.Category == "Defensive");
