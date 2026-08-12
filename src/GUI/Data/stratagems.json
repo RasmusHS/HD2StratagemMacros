@@ -242,6 +242,14 @@
     "demo-force": 30
   },
   {
+    "name": "40-K Meltagun",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Up", "Left", "Left", "Down" ],
+    "icon": "Support_Weapon_Stratagem_Fallback_Icon.svg",
+    "tags": [ "energy", "explosive", "support weapon", "chargeup", "heavy", "anti-tank" ],
+    "demo-force": 30
+  },
+  {
     "name": "GL-52 De-Escalator",
     "category": "Supply",
     "inputs": [ "Down", "Right", "Up", "Left", "Right" ],
