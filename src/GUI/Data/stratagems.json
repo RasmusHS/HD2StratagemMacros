@@ -245,7 +245,7 @@
     "name": "40-K Meltagun",
     "category": "Supply",
     "inputs": [ "Down", "Left", "Up", "Left", "Left", "Down" ],
-    "icon": "Support_Weapon_Stratagem_Fallback_Icon.svg",
+    "icon": "40-K Meltagun.svg",
     "tags": [ "energy", "explosive", "support weapon", "chargeup", "heavy", "anti-tank" ],
     "demo-force": 30
   },
