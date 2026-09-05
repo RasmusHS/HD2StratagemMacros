@@ -155,7 +155,7 @@
     "name": "Eagle Gas Strike",
     "category": "Offensive",
     "inputs": [ "Up", "Right", "Left", "Right" ],
-    "icon": "Eagle Smoke Strike.svg",
+    "icon": "Eagle_Stratagem_Fallback_Icon_Background.svg",
     "tags": [ "eagle", "gas", "airstrike", "air support" ],
     "demo-force": 50
   },
