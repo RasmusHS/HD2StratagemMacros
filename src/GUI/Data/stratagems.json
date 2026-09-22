@@ -530,22 +530,6 @@
     "demo-force": 50
   },
   {
-    "name": "Bastion MK XVI",
-    "category": "Supply",
-    "inputs": [ "Left", "Down", "Right", "Down", "Left", "Down", "Up", "Down", "Up" ],
-    "icon": "Bastion MK XVI.svg",
-    "tags": [ "vehicle", "tank", "heavy", "anti-tank", "anti-tank 1", "anti-tank 2", "anti-tank 3", "anti-tank 4" ],
-    "demo-force": 40
-  },
-  {
-    "name": "Incinerator FRV",
-    "category": "Supply",
-    "inputs": [ "Left", "Down", "Right", "Left", "Down", "Up", "Up" ],
-    "icon": "Incinerator FRV.svg",
-    "tags": [ "vehicle", "recon", "transport", "heavy", "incendiary" ],
-    "demo-force": 50
-  },
-  {
     "name": "Supply FRV",
     "category": "Supply",
     "inputs": [ "Left", "Down", "Left", "Left", "Down", "Up", "Right" ],
@@ -560,6 +544,30 @@
     "icon": "Fast Recon Vehicle.svg",
     "tags": [ "vehicle", "recon", "transport", "heavy" ],
     "demo-force": 15
+  },
+  {
+    "name": "Incinerator FRV",
+    "category": "Supply",
+    "inputs": [ "Left", "Down", "Right", "Left", "Down", "Up", "Up" ],
+    "icon": "Incinerator FRV.svg",
+    "tags": [ "vehicle", "recon", "transport", "heavy", "incendiary" ],
+    "demo-force": 50
+  },
+  {
+    "name": "Bastion MK XVI",
+    "category": "Supply",
+    "inputs": [ "Left", "Down", "Right", "Down", "Left", "Down", "Up", "Down", "Up" ],
+    "icon": "Bastion MK XVI.svg",
+    "tags": [ "vehicle", "tank", "heavy", "anti-tank", "anti-tank 1", "anti-tank 2", "anti-tank 3", "anti-tank 4" ],
+    "demo-force": 40
+  },
+  {
+    "name": "TD-110 Maelstrom",
+    "category": "Supply",
+    "inputs": [ "Left", "Down", "Right", "Down", "Left", "Down", "Up", "Left", "Right" ],
+    "icon": "Maelstrom_Stratagem_Icon_Background.svg",
+    "tags": [ "vehicle", "tank", "heavy", "anti-tank", "anti-tank 1", "anti-tank 2", "anti-tank 3", "anti-tank 4" ],
+    "demo-force": 40
   },
   {
     "name": "Emancipator Exosuit",
