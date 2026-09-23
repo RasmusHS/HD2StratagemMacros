@@ -565,7 +565,7 @@
     "name": "TD-110 Maelstrom",
     "category": "Supply",
     "inputs": [ "Left", "Down", "Right", "Down", "Left", "Down", "Up", "Left", "Right" ],
-    "icon": "Maelstrom_Stratagem_Icon_Background.svg",
+    "icon": "TD-110 Maelstrom.svg",
     "tags": [ "vehicle", "tank", "heavy", "anti-tank", "anti-tank 1", "anti-tank 2", "anti-tank 3", "anti-tank 4" ],
     "demo-force": 40
   },
