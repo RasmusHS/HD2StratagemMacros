@@ -218,6 +218,14 @@
     "demo-force": 10
   },
   {
+    "name": "Nova",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Right", "Down", "Down" ],
+    "icon": "Nova.svg",
+    "tags": [ "energy", "charge up", "support weapon", "heavy", "rifle", "sniper" ],
+    "demo-force": 10
+  },
+  {
     "name": "Speargun",
     "category": "Supply",
     "inputs": [ "Down", "Right", "Down", "Left", "Up", "Right" ],
@@ -360,6 +368,14 @@
     "icon": "Autocannon.svg",
     "tags": [ "autocannon", "backpack", "support weapon", "explosive", "low ergonomics", "stationary reload", "heavy" ],
     "demo-force": 30
+  },
+  {
+    "name": "Apex",
+    "category": "Supply",
+    "inputs": [ "Down", "Left", "Left", "Up", "Down", "Left" ],
+    "icon": "Apex.svg",
+    "tags": [ "backpack", "support weapon", "explosive", "low ergonomics", "stationary reload", "heavy" ],
+    "demo-force": 10
   },
   {
     "name": "Airburst Rocket Launcher",
